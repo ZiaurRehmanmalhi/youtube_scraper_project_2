@@ -1,7 +1,8 @@
-from utils_task_2 import create_csv
+from selenium import webdriver
+from utils_task_2 import process_channel_videos
 
-url = input("Enter Any Youtube Chanel URL: ")
-url += "/videos"
+channel_url = input("Enter the URL of the YouTube channel: ")
 
-create_csv(url)
-print("Data successfully saved to csv files.")
+driver = webdriver.Chrome()
+process_channel_videos(channel_url, driver)
+driver.quit()
